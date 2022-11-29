@@ -1,0 +1,186 @@
+.sp-thongbao {
+  color: red;
+  margin-left: 2px;
+  display: none;
+}
+
+#SapXepGiam {
+  display: none;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+#notify.NotifyGreen {
+  color: rgb(0, 197, 0);
+}
+
+#notify.NotifyRed {
+  color: rgb(197, 0, 0);
+}
+
+#content {
+  width: 100%;
+  background: #74ebd5;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ACB6E5, #74ebd5);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container {
+  max-width: 1230px;
+}
+
+.myCardHeader,
+.myCardFooter {
+  background-color: transparent;
+}
+
+.modalAreYouSure {
+  display: block;
+  font-family: 'Lexend', sans-serif;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.modal-overlay.state-show {
+  z-index: 5;
+  opacity: 1;
+  /* visibility: visible; */
+}
+
+.modal.modalAreYouSure {
+  z-index: 50;
+}
+
+.modal-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* full screen */
+  right: 0;
+  bottom: 0;
+  z-index: 51;
+
+  /* căn giữa cho class modal chứa content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* mới vào ẩn đi  */
+  visibility: hidden;
+}
+
+/* state-appear : trạng thái xuất hiện 
+appear : xuất hiện   */
+.modal-frame.state-appear {
+  visibility: visible;
+}
+
+.modal-frame.state-appear .modal-inset {
+  animation: modalComeIn 0.25s ease;
+  visibility: visible;
+}
+
+.modal-frame.state-appear .bodyModal {
+  opacity: 1;
+  transform: translateY(0) scale(1, 1);
+}
+
+
+
+.modal-inset {
+  position: relative;
+  padding: 40px;
+  background-color: white;
+  width: 650px;
+  margin: 90px auto;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  visibility: hidden;
+}
+
+.modal-inset .close {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  font-size: 25px;
+  right: 10px;
+  padding: 10px;
+  opacity: .4;
+}
+
+.modal-inset .close:hover {
+  opacity: 1;
+}
+
+.bodyModal {
+  opacity: 1;
+  transform: translateY(0) scale(0.8, 0.8);
+  transition-property: opacity, transform;
+  transition-duration: 0.25s;
+  transition-delay: 0.1s;
+}
+
+.bodyModal h3 {
+  font-weight: 700;
+  font-size: 25px;
+  color: #F2594B;
+}
+
+.closeIcon {
+  font-size: 34px;
+  color: #F2594B;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #F2594B;
+  line-height: 55px;
+}
+
+.bodyModal p {
+  padding-bottom: 20px;
+  font-size: 17px;
+  font-family: 'Lexend', sans-serif;
+  color: black;
+}
+
+.bodyModal .btn {
+  font-size: 20px;
+  padding: 8px 24px;
+  margin: 0 8px;
+}
+
+@keyframes modalComeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8, 0.8);
+  }
+
+  65% {
+    transform: scale(1.05, 1.05);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
