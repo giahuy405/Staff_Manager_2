@@ -10,8 +10,8 @@ function Staff(staffAccount, staffFullName, staffEmail, staffPassword, staffWork
     this.totalSalary = function () {
         // bỏ dấu phẩy ra khỏi tiền [nhớ chuyển chuỗi số thành chuỗi kí tự toString() do lúc DOM nó vẫn là string nên ko cần làm bước toString()]
         var salary = this.staffSalary.replace(/[,]/g, '');
-        if (this.staffPosition === 'Sếp') salary * 3;
-        else if (this.staffPosition === 'Trưởng phòng') salary * 2;
+        if (this.staffPosition === 'Sếp') salary *= 3;
+        else if (this.staffPosition === 'Trưởng phòng') salary *= 2;
         // thêm dấu phẩy vào số tiền -> chuyển chuỗi số thành string  .toString()
         // console.log(salary.toString().replace(/^0+/, '').replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         return salary.toString().replace(/^0+/, '').replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
